@@ -2,34 +2,36 @@
 <html>
     <head>
         <title>???????????</title>
-        <link rel="stylesheet" type="text/css" href="startingscreen.css">
+        <link rel="stylesheet" type="text/css" href="code1crack.css">
     </head>
     <body style="background-color: black;">
 
-        <div id="login-panel">
-        <p>LOCKED</p>
+    <center>
+
+        <div id="content-restricted">
+        <p style="color: white; font-family: monospace; font-weight: 500; font-size: 50px;">LOCKED</p>
             <input id="password" type="password">
-            <button onclick="checkPassword()">Unlock</button>
-        <p id="message"></p>
+            <button onclick="checkPassword()">Are you sure?</button>
+        <p id="Cantyougetit" style="color: #b80000; font-family: monospace; font-size: 10px; margin-top: 5px;"></p>
         </div>
 
-        <div id="protected">
-        <h1>Welcome</h1>
-        <p>This content is “locked” until the correct password is entered.</p>
+        <div id="verses">
+        <p style="font-family: monospace; font-size: 20px; margin-top: 50px;">"All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age."</p>
         </div>
 
-  <script>
+    <script>
     function checkPassword() {
       const pw = document.getElementById('password').value;
-      const message = document.getElementById('message');
+      const Cantyougetit = document.getElementById('Cantyougetit');
       if (pw === 'holytrinity') {
-        document.getElementById('login-panel').style.display = 'none';
-        document.getElementById('protected').style.display = 'block';
+        window.location.href = 'behindlockedgates.html';
       } else {
-        message.textContent = 'Wrong password';
+        document.getElementById('Cantyougetit').textContent = 'Try harder.';
       }
     }
-  </script>
+    </script>
+
+    </center>
 
 </body>
 </html>
