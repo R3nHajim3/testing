@@ -6,59 +6,30 @@
     </head>
     <body style="background-color: black;">
 
-        <center>
-            
-            <table style="width: 1000px; height: 100px; border-style: solid; border-width: 5px; border-color: black; border-radius: 20px; background-color: white;">
-                <tr>
-                <td>
+        <div id="login-panel">
+        <p>LOCKED</p>
+            <input id="password" type="password">
+            <button onclick="checkPassword()">Unlock</button>
+        <p id="message"></p>
+        </div>
 
-                <div style="display: flex; align-items: flex-start;">
-                <img src="PFP.png" style="height: 200px; width: 200px; display: left;">
+        <div id="protected">
+        <h1>Welcome</h1>
+        <p>This content is “locked” until the correct password is entered.</p>
+        </div>
 
-                <div>
-                <h1 style="font-family: monospace; font-weight: bold; font-size: 40px">INVESTIGATIVE STUDY OF SCIENTIFIC AND TRANSCENDAL ANOMALIES</h1>
-                <h3 style="font-family: monospace; font-weight: bold;">I.S.O.S.A.T.A</h3>
-                </div>
-
-                </td>    
-                </tr>
-            </table>
-
-        <br>
-
-            <table style="width: 1000px; height: 80px; border-style: solid; border-width: 5px; border-color: black; border-radius: 20px; background-color: white;">
-                <tr>
-                <td>
-                
-                <ul class="menubutton" style="font-family: monospace; font-size: 16px">
-                    <li><a href="index.html">Main Menu</a></li>
-                    <li><a href="!logs.html">File Logs</a></li>
-                    <li><a href="!access.html">Authorized Panel</a></li>
-                    <li><a href="!channel.html">Chat Channel</a></li>
-                    <li><a href="!contact.html">Contact Information</a></li>
-                    <li><a href="!help.html">????</a></li>
-                </ul>
-
-                </td>
-                </tr>
-            </table>
-            
-        <br>
-
-                
-
-            <table style="width: 1000px; height: 1000px; border-style: solid; border-width: 5px; border-color: black; border-radius: 20px; background-color: white;">
-                <tr> 
-                <td>
-                    <a class="notice" href="https://docs.google.com/document/d/1iCLIppi1rNveBaCjzNG_EU48pbnbeBIOpDDGRrrrk1k/edit?usp=sharing">
-                    <p style="font-size: 50px; font-weight: 500; font-variant: small-caps; color: #bf0016; text-align: center;" title="333">SITE IS CURRENTLY UNDER CONSTRUCTION, COME BACK LATER</p>
-                    </a>
-                
-                </td>
-                </tr>
-            </table>
-        
-        </center>
+  <script>
+    function checkPassword() {
+      const pw = document.getElementById('password').value;
+      const message = document.getElementById('message');
+      if (pw === 'holytrinity') {
+        document.getElementById('login-panel').style.display = 'none';
+        document.getElementById('protected').style.display = 'block';
+      } else {
+        message.textContent = 'Wrong password';
+      }
+    }
+  </script>
 
 </body>
 </html>
