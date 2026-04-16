@@ -8,26 +8,54 @@
 
     <center>
 
-        <div id="content-restricted">
-        <p style="color: white; font-family: monospace; font-weight: 500; font-size: 50px;">LOCKED</p>
-            <input id="password" type="password">
-            <button onclick="checkPassword()">Are you sure?</button>
-        <p id="Cantyougetit" style="color: #b80000; font-family: monospace; font-size: 10px; margin-top: 5px;"></p>
+        <div id="content-restricted" style="display: flex; flex-direction: column; align-items: center;">
+        <img src="L_K.png" style="height: 200px; width: 200px; margin-bottom: -70px;">
+            <p style="color: white; font-family: monospace; font-weight: 500; font-size: 50px;">LOCKED</p>
+                <input id="password" type="password">
+                <button onclick="checkPassword()">Are you sure?</button>
+            <p id="Cantyougetit" style="color: #b80000; font-family: monospace; font-size: 10px; margin-top: 5px;"></p>
         </div>
 
         <div id="verses">
-        <p style="font-family: monospace; font-size: 20px; margin-top: 50px;">"All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age."</p>
+        <p style="font-family: monospace; font-size: 20px; margin-top: 300px;">"All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age."</p>
         </div>
 
     <script>
+    let attempts = 0;
+    
     function checkPassword() {
+      attempts++;
       const pw = document.getElementById('password').value;
-      const Cantyougetit = document.getElementById('Cantyougetit');
+      const message = document.getElementById('Cantyougetit');
+    
       if (pw === 'holytrinity') {
         window.location.href = 'behindlockedgates.html';
-      } else {
-        document.getElementById('Cantyougetit').textContent = 'Try harder.';
+        return;
       }
+    
+      if (attempts === 1) {
+        message.textContent = 'Try harder.';
+        } else if (attempts === 4) {
+        message.textContent = 'Can\'t you do better?';
+        } else if (attempts === 7) {
+        message.textContent = 'Are you even trying?';
+        } else if (attempts === 10) {
+        message.textContent = 'Yawn, you bore me..';
+        } else if (attempts === 30) {
+        message.textContent = 'Smart one, aren\'t you?';
+        } else if (attempts === 69) {
+        message.textContent = 'Folks! We have an Einstein in our hands!';
+        } else if (attempts === 67) {
+        message.textContent = 'This isn\'t funny anymore, quit it.';
+        }else if (attempts === 222) {
+        message.textContent = 'Congrats! You\'ve been going at it for the two hundred and twenty second time!!';
+        } else if (attempts === 333) {
+        message.textContent = 'Even God wouldn\'t help you.';
+        } else if (attempts === 666) {
+        message.textContent = 'Are we there yet...';
+        } else if (attempts === 999) {
+        message.textContent = 'I\'m tired, just highlight the page already genius.';
+        }
     }
     </script>
 
